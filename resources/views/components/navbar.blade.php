@@ -12,6 +12,7 @@
             <a href="{{ route('about') }}" class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('about') ? 'border-b-2 border-blue-500' : '' }}">About</a>
             <a href="{{ route('alpine') }}" class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('alpine') ? 'border-b-2 border-blue-500' : '' }}">Alpine</a>
             <a href="{{ route('alpine.dashboard') }}" class="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('alpine.dashboard') ? 'border-b-2 border-blue-500' : '' }}">Alpine Dashboard</a>
+
           </div>
         </div>
 

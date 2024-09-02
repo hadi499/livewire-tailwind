@@ -1,10 +1,11 @@
 <div class="overflow-auto md:w-[800px] p-8 mx-auto mt-6">
 
-    <div class="">
+    <div class="border p-4">
         <div class="my-6">
             <a href="{{route('posts.create')}}" class="bg-blue-800 text-white hover:bg-blue-700 px-2 py-2 rounded-md">Create Post</a>
 
         </div>
+
         <table class=" bg-white border border-gray-300">
             <thead>
                 <tr class="bg-gray-100 border-b">
@@ -25,6 +26,38 @@
                         <button class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">Delete</button>
                     </td>
                 </tr>
+
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+    <div class="border p-4 mt-8">
+        <div class="my-6">
+            <a href="{{ route('posts.quill') }}" class="bg-yellow-800 text-white hover:bg-yellow-700 px-2 py-2 rounded-md">Create Post Quill</a>
+
+        </div>
+
+        <table class=" bg-white border border-gray-300 w-full">
+            <thead>
+                <tr class="bg-gray-100 border-b">
+                    <th class="text-left py-3 px-4 font-semibold text-sm text-gray-600">Title</th>
+                    <th class="text-left py-3 px-4 font-semibold text-sm text-gray-600">Body</th>
+                    <th class="text-left py-3 px-4 font-semibold text-sm text-gray-600">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($posts as $post)
+                <tr class="hover:bg-gray-50">
+                    <td class="py-3 px-4 border-b">{{$post->title}}</td>
+                    <td class="py-3 px-4 border-b">{!! $post->body !!}</td>
+
+                    <td class="py-3 px-4 border-b space-y-1 w-2/6">
+                        <a href="{{ route('posts.edit.quill', $post->id) }}" class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">Edit</a>
+                        <button class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Show</button>
+                        <button class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">Delete</button>
+                    </td>
+                </tr>
+                @endforeach
 
                 <!-- Add more rows as needed -->
             </tbody>
