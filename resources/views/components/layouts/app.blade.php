@@ -49,7 +49,11 @@
 
 <body>
     <x-navbar />
-    {{ $slot }}
+    <div class="flex">
+
+        <x-sidebar />
+        {{ $slot }}
+    </div>
 
 </body>
 
